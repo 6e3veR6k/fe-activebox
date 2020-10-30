@@ -1,0 +1,272 @@
+/* Fonts */
+
+@font-face {
+  font-family: 'ProximaNovaL';
+  font-weight: 300;
+  font-style: normal;
+  src: local('Proxima Nova Light'), local('ProximaNova-Light'),
+    url('../fonts/ProximaNova-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'ProximaNova';
+  font-weight: 400;
+  font-style: normal;
+	src: local('Proxima Nova Regular'), local('ProximaNova-Regular'),
+		url('../fonts/ProximaNova-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'ProximaNovaB';
+  font-weight: 600;
+  font-style: normal;
+	src: local('Proxima Nova Bold'), local('ProximaNova-Bold'),
+		url('../fonts/ProximaNova-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'ProximaNovaBl';
+  font-weight: 800;
+  font-style: normal;
+	src: local('Proxima Nova Black'), local('ProximaNova-Black'),
+		url('../fonts/ProximaNova-Black.woff') format('woff');
+}
+
+/* Variables */
+
+:root {
+  --main-ff-light: 'ProximaNovaL', Arial, sans-serif;
+  --main-ff-bold: 'ProximaNovaB', Arial, sans-serif;
+  --main-ff: 'ProximaNova', Arial, sans-serif;
+  --second-ff: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --main-ff-text-color: #6c7279;
+  --main-ff-title-color: #2d3033;
+  --second-ff-text-color: #ffffff;
+  --main-theme-color: #3a3e64;
+  --second-theme-color: #313454;
+  --main-accent-color: #e84545;
+  --main-accent-color-lighter: #e84545d4;
+}
+
+/* default styles */
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+    font-family: var(--main-ff);
+    color: var(--main-ff-text-color);
+    font-size: 1.4rem;
+    line-height: 1.2;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.btn {
+  display: block;
+  margin: 0;
+  border: none;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.3rem;
+  line-height: 2.1rem;
+  background-color: var(--main-accent-color);
+  color: var(--second-ff-text-color);
+  padding: 1.5rem 5.1rem;
+  border-radius: 0.2rem ;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--main-accent-color-lighter);
+}
+
+
+/* header and hero */
+.hero {
+  background-image: url("../images/hero-img.jpg");
+  color: var(--second-ff-text-color);
+  padding-bottom: 15.6rem;
+  margin-bottom: 12rem;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 117rem;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3.8rem;
+  padding-bottom: 3.8rem;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  line-height: 1.56rem;
+  font-family: var(--main-ff-light);
+  margin-bottom: 14.5rem;
+}
+
+.logo-link,
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: var(--second-ff-text-color);
+}
+
+.nav-link::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  height: 1px;
+  width: 100%;
+  background-color: var(--main-accent-color);
+  transform: scaleX(0);
+  transition: all 0.2s ease-out;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--main-accent-color);
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+  transform: scaleX(1);
+}
+
+.page-nav {
+  min-width: 50.42%;
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-title {
+  font-family: var(--main-ff-bold);
+  margin: 0 auto 1.5rem auto;
+  padding: 0;
+  font-size: 6.5rem;
+  line-height: 7.1rem;
+  max-width: 74.35%;
+  text-transform: uppercase;
+}
+
+.hero-description {
+  margin: 0 auto;
+  max-width: 74.871%;
+  padding: 0;
+  font-size: 2.2rem;
+  line-height: 3.3rem;
+  text-align: center;
+  margin-bottom: 7rem;
+}
+
+.hero-btn  {
+  margin: 0 auto;
+  max-width: 17.09%;
+}
+
+/* sections */
+.features {
+  margin-bottom: 12.2rem;
+}
+
+.features-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.features-list-item {
+  max-width: 33.333%;
+  text-align: center;
+  padding: 0 1.2rem 0 1.2rem;
+}
+
+.features-list-item:not(:nth-last-of-type(-n+3)) {
+  margin-bottom: 7rem;
+}
+
+.feature-title {
+  color: var(--main-ff-title-color);
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  line-height: 1.68rem;
+  margin-bottom: 1.9rem;
+}
+
+.features-about {
+  margin: 0;
+  padding: 0;
+  line-height: 2.1rem;
+}
+
+article.feature::before {
+  content: "";
+  display: block;
+  height: 6rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-bottom: 3.4rem;
+}
+
+article.icon-design::before {
+  background-image: url("../images/icons/design-icon.png");
+}
+
+article.icon-monitor::before {
+  background-image: url("../images/icons/monitor-icon.png");
+}
+
+article.icon-lamp::before {
+  background-image: url("../images/icons/lamp-icon.png");
+}
+
+article.icon-atom::before {
+  background-image: url("../images/icons/atom-icon.png");
+}
+
+article.icon-suitcase::before {
+  background-image: url("../images/icons/briefcase-icon.png");
+}
+
+article.icon-cloud::before {
+  background-image: url("../images/icons/cloud-icon.png");
+}
+
